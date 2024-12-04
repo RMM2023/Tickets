@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/navigation_aviatickets"
-        android:icon="@drawable/aviatickets"
+        android:icon="@drawable/air_tickets"
         android:title="Авиабилеты"/>
 
     <item
@@ -12,7 +12,7 @@
 
     <item
         android:id="@+id/navigation_route"
-        android:icon="@drawable/route"
+        android:icon="@drawable/in_short"
         android:title="Короче"/>
 
     <item

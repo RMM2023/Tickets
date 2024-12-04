@@ -3,4 +3,15 @@
     <style name="BottomNavigationTextStyle">
         <item name="android:textSize">10sp</item>
     </style>
+    <style name="AppTextRegular">
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+    </style>
+
+    <style name="AppTextMedium">
+        <item name="android:fontFamily">@font/sf_pro_display_medium</item>
+    </style>
+
+    <style name="AppTextBold">
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+    </style>
 </resources>

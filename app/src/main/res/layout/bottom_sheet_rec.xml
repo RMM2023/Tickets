@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@color/grey_2"
+    app:cardCornerRadius="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/handle"
+            android:layout_width="38dp"
+            android:layout_height="5dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/bottom_sheet_line"
+            android:backgroundTint="@color/grey_5"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="25dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/search_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/grey_3"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/handle">
+            
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="12dp">
+                
+                <ImageView
+                    android:id="@+id/image_plane"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/plane"
+                    app:tint="@color/grey_6"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <EditText
+                    android:id="@+id/from_edit_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/image_plane"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="@null"
+                    android:hint="Откуда - Минск"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/grey_6"/>
+
+                <View
+                    android:id="@+id/line_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@color/grey_4"
+                    android:paddingHorizontal="16dp"/>
+
+                <ImageView
+                    android:id="@+id/image_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/search"
+                    app:tint="@color/grey_6"
+                    app:layout_constraintTop_toBottomOf="@+id/image_plane"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:paddingTop="16dp"/>
+
+                <EditText
+                    android:id="@+id/to_edit_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintTop_toBottomOf="@+id/from_edit_text"
+                    app:layout_constraintStart_toEndOf="@+id/image_plane"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:paddingTop="16dp"
+                    android:background="@null"
+                    android:hint="Куда - Турция"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/grey_6"/>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/close"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/to_edit_text"
+                    app:layout_constraintBottom_toBottomOf="@+id/to_edit_text"
+                    android:layout_marginTop="16dp"/>
+                
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
