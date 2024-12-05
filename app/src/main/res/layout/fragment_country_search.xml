@@ -90,35 +90,190 @@
         
     </androidx.cardview.widget.CardView>
 
-    <ScrollView
-        android:id="@+id/interface_up" android:layout_width="match_parent"
+    <HorizontalScrollView
+        android:id="@+id/buttons_scroll"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/search_card"
-        android:layout_marginTop="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="horizontal">
+        android:layout_marginTop="16dp"
+        android:paddingHorizontal="16dp"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@+id/search_card">
 
-        <com.google.android.material.chip.Chip
+        <LinearLayout
+            android:id="@+id/filter_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Обратно"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:backgroundTint="@color/grey_3"/>
+            android:orientation="horizontal">
 
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/return_button"
+                android:layout_width="104dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/grey_3"
+                android:drawableLeft="@drawable/plus"
+                android:paddingHorizontal="8dp"
+                android:text="обратно"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/sf_pro_display_regular"
+                app:cornerRadius="16dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/departure_button"
+                android:layout_width="104dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/grey_3"
+                android:paddingHorizontal="8dp"
+                android:text="24 фев, сб"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/sf_pro_display_regular"
+                app:cornerRadius="16dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/passengers_button"
+                android:layout_width="104dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/grey_3"
+                android:drawableLeft="@drawable/human"
+                android:drawableTint="@color/white"
+                android:paddingHorizontal="8dp"
+                android:text="1, эконом"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/sf_pro_display_regular"
+                app:cornerRadius="16dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/filter_button"
+                android:layout_width="104dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/grey_3"
+                android:drawableLeft="@drawable/filter"
+                android:paddingHorizontal="8dp"
+                android:text="фильтры"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/sf_pro_display_regular"
+                app:cornerRadius="16dp"/>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tickets_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@color/grey_3"
+        app:layout_constraintTop_toBottomOf="@+id/buttons_scroll">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="8 фев, сб"
-            android:textColor="@color/white"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:textSize="14sp"
-            android:backgroundTint="@color/grey_3"/>
+            android:paddingTop="16dp">
 
-    </ScrollView>
+            <TextView
+                android:id="@+id/direct_flies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="Прямые рейсы"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:fontFamily="@font/sf_pro_display_regular"/>
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ticket_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/direct_flies"
+                tools:itemCount="3"
+                tools:listitem="@layout/flights"
+                android:nestedScrollingEnabled="false"/>
 
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/ticket_list"
+                android:text="Показать все"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:backgroundTint="@color/grey_3"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/sub_card"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="40dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardBackgroundColor="@color/grey_3">
+
+        <LinearLayout
+            android:id="@+id/sub_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/subscribes"
+                android:layout_marginEnd="8dp"
+                app:tint="@color/blue"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Подписка на цену"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:fontFamily="@font/sf_pro_display_regular"/>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/sub_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@id/sub_card"
+        android:text="Посмотреть все билеты"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:backgroundTint="@color/blue">
+
+    </com.google.android.material.button.MaterialButton>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

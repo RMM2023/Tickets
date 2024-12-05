@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="16dp"
+    android:paddingHorizontal="16dp"
+    android:background="@color/grey_3"
+    android:layout_marginBottom="8dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/icon_container"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:cardCornerRadius="12dp"
+        android:elevation="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/company_icon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@color/red"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/company_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/price"
+        app:layout_constraintTop_toTopOf="@+id/icon_container"
+        app:layout_constraintStart_toEndOf="@+id/icon_container"
+        android:text="Уральские авиалинии"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/sf_pro_display_regular"
+        />
+
+    <TextView
+        android:id="@+id/time_range"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintStart_toStartOf="@+id/company_name"
+        app:layout_constraintTop_toBottomOf="@+id/company_name"
+        app:layout_constraintEnd_toEndOf="@+id/price"
+        android:text="07:00  09:10   10:00  11:00  12:00  13:00  12:00 13:00  12:00"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/sf_pro_display_semibold"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:ellipsize="end"/>
+
+    <ImageView
+        android:id="@+id/right_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/company_name"
+        app:layout_constraintBottom_toBottomOf="@+id/company_name"
+        android:src="@drawable/right_arrow"/>
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toTopOf="@+id/company_name"
+        app:layout_constraintBottom_toBottomOf="@+id/company_name"
+        app:layout_constraintEnd_toStartOf="@+id/right_arrow"
+        android:text="2 390 ₽"
+        android:textColor="@color/blue"
+        android:textSize="14sp"
+        android:fontFamily="@font/sf_pro_display_semibold"
+        android:singleLine="true"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey_4"
+        android:paddingTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
