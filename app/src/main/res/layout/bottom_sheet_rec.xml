@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:backgroundTint="@color/grey_2"
     app:cardCornerRadius="16dp">
 
@@ -33,6 +34,7 @@
             app:layout_constraintTop_toBottomOf="@+id/handle">
             
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/search_const"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingHorizontal="16dp"
@@ -101,10 +103,35 @@
                     app:layout_constraintTop_toTopOf="@+id/to_edit_text"
                     app:layout_constraintBottom_toBottomOf="@+id/to_edit_text"
                     android:layout_marginTop="16dp"/>
-                
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bar_1_rec"
+            android:layout_width="326dp"
+            android:layout_height="90dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/bar_1"
+            app:layout_constraintTop_toBottomOf="@+id/search_const"
+            app:layout_constraintStart_toStartOf="@+id/search_const"
+            app:layout_constraintEnd_toEndOf="@+id/search_const"
+            android:layout_marginTop="26dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="19dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="328dp"
+            android:layout_height="216dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/city"
+            app:layout_constraintTop_toBottomOf="@+id/bar_1_rec"
+            app:layout_constraintStart_toStartOf="@+id/bar_1_rec"
+            app:layout_constraintEnd_toEndOf="@+id/bar_1_rec"
+            android:layout_marginTop="26dp"
+            android:layout_marginHorizontal="16dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
