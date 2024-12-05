@@ -8,64 +8,116 @@
     android:background="@color/black">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/search_card"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="96dp"
         android:layout_margin="16dp"
         android:backgroundTint="@color/grey_3"
-        app:cardCornerRadius="16dp">
-
-        <LinearLayout
+        app:cardCornerRadius="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="47dp"
+        android:layout_marginHorizontal="16dp">
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="12dp">
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/form_view"
+                android:layout_width="272dp"
+                android:layout_height="1dp"
+                android:layout_marginVertical="12dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/grey_4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/line_image"/>
+            
+            <ImageView
+                android:id="@+id/line_image"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/form_view"
+                app:layout_constraintBottom_toBottomOf="@+id/form_view"
+                app:layout_constraintEnd_toStartOf="@+id/form_view"
+                android:src="@drawable/left_arrow"
+                android:layout_marginHorizontal="8dp"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/line_image"
+                android:layout_marginStart="8dp"
+                android:hint="Минск"
+                android:textColorHint="@color/white"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/line_image"
+                app:layout_constraintStart_toEndOf="@+id/line_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="17dp"
+                android:layout_marginStart="8dp"
+                android:hint="Сочи"
+                android:textColorHint="@color/white"/>
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginTop="24dp"
-                android:src="@drawable/search"
-                app:tint="@color/grey_6" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/line_image"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/change"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line_image"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/close"/>
 
-                <EditText
-                    android:id="@+id/departureEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:text="Минск"
-                    android:inputType="textPersonName"
-                    android:digits="абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:theme="@style/AppTextRegular" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginVertical="12dp"
-                    android:background="@color/grey_6" />
-
-                <EditText
-                    android:id="@+id/arrivalEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:text="Сочи"
-                    android:inputType="textPersonName"
-                    android:digits="абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:theme="@style/AppTextRegular" />
-            </LinearLayout>
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        
     </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:id="@+id/interface_up" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/search_card"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal">
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Обратно"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:backgroundTint="@color/grey_3"/>
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8 фев, сб"
+            android:textColor="@color/white"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:textSize="14sp"
+            android:backgroundTint="@color/grey_3"/>
+
+    </ScrollView>
 
 
 
