@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.ui.MainFragment"
+    tools:context=".presentation.ui.main.MainFragment"
     android:background="@color/black">
 
     <TextView
@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:paddingTop="26dp"
-        android:text="Поиск дешевых\nавиабилетов"
+        android:text="@string/search_for_cheap_flights"
         android:textAlignment="center"
         android:fontFamily="@font/sf_pro_display_semibold"
         android:textSize="22sp"
@@ -63,7 +63,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@null"
-                        android:hint="Откуда - Москва"
+                        android:hint="@string/where_is_Moscow_from"
                         android:inputType="textPersonName"
                         android:digits="абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
                         android:textColor="@color/white"
@@ -82,7 +82,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@null"
-                        android:hint="Куда - Турция"
+                        android:hint="@string/where_to_Turkeys"
                         android:inputType="textPersonName"
                         android:digits="абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
                         android:textColor="@color/white"
@@ -102,7 +102,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:text="Музыкально отлететь"
+        android:text="@string/musical_hotel"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:fontFamily="@font/sf_pro_display_semibold"/>
@@ -117,5 +117,17 @@
         android:paddingHorizontal="16dp"
         android:layout_marginTop="16dp"
         tools:listitem="@layout/offers"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:indeterminateTint="@color/blue"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_music"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_name"
         app:layout_constraintStart_toStartOf="parent"
         android:paddingBottom="4dp"
-        android:text="Будапешт"
+        android:text="@string/Budapest"
         android:textSize="14sp"
         android:textColor="@color/white"
         android:fontFamily="@font/sf_pro_display_semibold"/>
@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@+id/image_air_tickets"
         app:layout_constraintTop_toBottomOf="@+id/text_city"
-        android:text="от 22 264 ₽"
+        android:text="@string/_22_264"
         android:textSize="14sp"
         android:textColor="@color/white"
         android:fontFamily="@font/sf_pro_display_semibold"/>

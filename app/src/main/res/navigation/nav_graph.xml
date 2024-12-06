@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.portfoliormm.tickets.presentation.ui.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_countrySearchFragment"
+            app:destination="@id/countrySearchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/countrySearchFragment"
+        android:name="com.portfoliormm.tickets.presentation.ui.CountrySearchFragment"
+        android:label="fragment_country_search"
+        tools:layout="@layout/fragment_country_search" >
+        <action
+            android:id="@+id/action_countrySearchFragment_to_ticketViewingFragment"
+            app:destination="@id/ticketViewingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketViewingFragment"
+        android:name="com.portfoliormm.tickets.presentation.ui.TicketViewingFragment"
+        android:label="fragment_ticket_viewing"
+        tools:layout="@layout/fragment_ticket_viewing" />
+</navigation>

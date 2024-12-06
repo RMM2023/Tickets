@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
-                android:text="Сложный\nмаршрут"
+                android:text="@string/difficult_route"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 android:theme="@style/AppTextRegular" />
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
-                android:text="Куда угодно"
+                android:text="@string/anywhere"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 android:theme="@style/AppTextRegular" />
@@ -111,7 +111,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
-                android:text="Выходные"
+                android:text="@string/weekends"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 android:theme="@style/AppTextRegular" />
@@ -145,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
-                android:text="Горящие\nбилеты"
+                android:text="@string/last_minute_tickets"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 android:theme="@style/AppTextRegular" />
